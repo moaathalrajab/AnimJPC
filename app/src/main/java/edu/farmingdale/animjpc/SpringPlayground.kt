@@ -36,10 +36,10 @@ import androidx.compose.ui.zIndex
 @Composable
 fun SpringPlayground() {
     val dampingRatio = remember {
-        mutableStateOf(Spring.DampingRatioNoBouncy)
+        mutableStateOf(0.1f)
     }
     val stiffness = remember {
-        mutableStateOf(Spring.StiffnessMedium)
+        mutableStateOf(50f)
     }
     Column(
         Modifier
@@ -53,8 +53,8 @@ fun SpringPlayground() {
                 .zIndex(1f),
             contentAlignment = Alignment.TopCenter
         ) {
-            val shape = RoundedCornerShape(6.dp)
-            val size = min(maxHeight, maxWidth) / 3
+            val shape = RoundedCornerShape(50.dp)
+            val size = min(100.dp, 100.dp)
             var onTop by remember {
                 mutableStateOf(true)
             }
@@ -72,7 +72,7 @@ fun SpringPlayground() {
                         8.dp,
                         shape,
                     )
-                    .background(Color.Blue)
+                    .background(Color.Red)
                     .size(size)
                     .clickable { onTop = onTop.not() }
             )

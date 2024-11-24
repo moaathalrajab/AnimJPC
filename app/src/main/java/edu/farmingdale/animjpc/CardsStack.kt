@@ -44,23 +44,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import edu.farmingdale.animjpc.ui.theme.AnimJPCTheme
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
-@Preview(showBackground = true)
-@Composable
-fun StackPreview() {
-    AnimJPCTheme {
-        CertificatesStack()
-    }
-}
 
 @Composable
-fun CertificatesStack() {
+fun CardsStack() {
     Box(Modifier.fillMaxSize()) {
         var isExpanded by remember { mutableStateOf(false) }
         val transition = updateTransition(targetState = isExpanded, label = "Stack Expand")
@@ -72,7 +63,7 @@ fun CertificatesStack() {
             if (expanded) 8.dp else 0.dp
         }
         Text(
-            text = "Certificates",
+            text = "Cards",
             modifier = Modifier
                 .padding(horizontal = 16.dp, vertical = 24.dp)
                 .align(Alignment.TopStart)
@@ -235,7 +226,7 @@ fun CardContent() {
                 color = Color.White
             )
             Text(
-                text = "certificate of excellence",
+                text = "Credit card 1",
 
                 color = Color.LightGray
             )
