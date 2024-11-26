@@ -81,8 +81,8 @@ fun SpringPlayground() {
         Column(
             Modifier
                 .fillMaxWidth()
-                .weight(1f, true)
-                .background(Color.White, RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp))
+                .weight(0.5f, true)
+                .background(Color.Yellow, RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp))
                 .padding(horizontal = 32.dp, vertical = 16.dp)
         ) {
             ValueSlider(
